@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   memcpy.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: drubio-m <drubio-m@student.42madrid>       +#+  +:+       +#+        */
+/*   By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 13:44:32 by drubio-m          #+#    #+#             */
-/*   Updated: 2022/03/22 12:55:34 by drubio-m         ###   ########.fr       */
+/*   Created: 2022/03/22 17:37:22 by drubio-m          #+#    #+#             */
+/*   Updated: 2022/03/23 13:05:33 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *b, int c, size_t len)
+void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
-	int	i;
+	char	*cast_dst;
+	char	*cast_src;
+	int		i;
 
+	cast_dst = (char *) dst;
+	cast_src = (char *) src;
 	i = 0;
-	while (i < len)
+	while (i < n)
 	{
-		((char *) b)[i] = (unsigned char) c;
+		cast_dst[i] = cast_src[i];
 		i++;
 	}
-	return (b);
+	return (cast_dst);
 }

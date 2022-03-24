@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: drubio-m <drubio-m@student.42madrid>       +#+  +:+       +#+        */
+/*   By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 13:44:32 by drubio-m          #+#    #+#             */
-/*   Updated: 2022/03/22 12:55:34 by drubio-m         ###   ########.fr       */
+/*   Created: 2022/03/23 13:10:08 by drubio-m          #+#    #+#             */
+/*   Updated: 2022/03/23 13:55:06 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *b, int c, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	int	i;
+	char	*cast_dst;
+	char	*cast_src;
+	int		i;
 
+	cast_dst = (char *) dst;
+	cast_src = (char *) src;
 	i = 0;
 	while (i < len)
 	{
-		((char *) b)[i] = (unsigned char) c;
+		cast_dst[i] = cast_src[i];
 		i++;
 	}
-	return (b);
+	return (cast_dst);
 }
