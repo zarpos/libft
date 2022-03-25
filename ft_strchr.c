@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/24 17:18:22 by drubio-m          #+#    #+#             */
-/*   Updated: 2022/03/25 13:34:44 by drubio-m         ###   ########.fr       */
+/*   Created: 2022/03/25 13:40:23 by drubio-m          #+#    #+#             */
+/*   Updated: 2022/03/25 16:05:58 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-size_t	ft_strlen(const char *s);
-
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
-	size_t	n;
-	size_t	z;
+	int	i;
 
-	n = ft_strlen(src);
-	i = ft_strlen(dst);
-	z = 0;
-	if (i > dstsize)
-		return (n + dstsize);
-	else
+	i = 0;
+	while (s[i])
 	{
-		while (z < (dstsize - i) - 1)
-		{
-			dst[i + z] = src[z];
-			z++;
-		}
-		dst[i + dstsize] = '\0';
-		return (i + n);
+		if (s[i] == c)
+			return ((char *)s + i);
+		i++;
 	}
+	return (0);
 }

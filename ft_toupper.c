@@ -1,38 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/24 17:18:22 by drubio-m          #+#    #+#             */
-/*   Updated: 2022/03/25 13:34:44 by drubio-m         ###   ########.fr       */
+/*   Created: 2022/03/25 11:26:19 by drubio-m          #+#    #+#             */
+/*   Updated: 2022/03/25 13:33:38 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-size_t	ft_strlen(const char *s);
-
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+int	ft_toupper(int c)
 {
-	size_t	i;
-	size_t	n;
-	size_t	z;
-
-	n = ft_strlen(src);
-	i = ft_strlen(dst);
-	z = 0;
-	if (i > dstsize)
-		return (n + dstsize);
+	if (c >= 97 && c <= 122)
+		return (c - 32);
 	else
-	{
-		while (z < (dstsize - i) - 1)
-		{
-			dst[i + z] = src[z];
-			z++;
-		}
-		dst[i + dstsize] = '\0';
-		return (i + n);
-	}
+		return (c);
 }
