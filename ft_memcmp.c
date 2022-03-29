@@ -1,46 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/23 13:56:37 by drubio-m          #+#    #+#             */
-/*   Updated: 2022/03/28 18:49:57 by drubio-m         ###   ########.fr       */
+/*   Created: 2022/03/28 21:53:39 by drubio-m          #+#    #+#             */
+/*   Updated: 2022/03/28 23:08:56 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
+#include "libft.h"
 #include <stdio.h>
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
-	size_t	j;
+unsigned char	*cast_dst;
+unsigned char	*cast_src;
+	size_t		i;
 
+	cast_dst = (unsigned char *)s1;
+	cast_src = (unsigned char *)s2;
 	i = 0;
-	j = 0;
-	while (src[i])
-		i++;
-	if (dstsize < 1)
-		return (i);
-	while (src[j] && j < dstsize - 1)
+	while (i < n)
 	{
-		dst[j] = src[j];
-		j++;
+		if (cast_dst[i] != cast_src[i])
+			return (cast_dst[i] - cast_src[i]);
+		i++;
 	}
-		dst[j] = '\0';
-	return (i);
+	return (0);
 }
 /*
 int main(void)
 {
 	char dst[100] = "hola que tal";
-	char *src = "adios";
+	char src[] = "que";
 	size_t n = 2;
-	//printf("%lu\n", ft_strlcpy(dst, src, n));
-	//printf("%lu\n", strlcpy(dst, src, n));
-//	printf("%lu\n", strlcpy(((void *)0), ((void *)0), 10));
-	printf("%lu\n", ft_strlcpy(((void *)0), ((void *)0), 10));
+	printf("%d", memcmp(dst, src, n));
+//	printf("%s", ft_memcpy(dst, src, n));
 }
 */

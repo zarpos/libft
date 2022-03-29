@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/24 17:18:22 by drubio-m          #+#    #+#             */
-/*   Updated: 2022/03/28 21:41:50 by drubio-m         ###   ########.fr       */
+/*   Created: 2022/03/28 20:12:19 by drubio-m          #+#    #+#             */
+/*   Updated: 2022/03/28 21:33:53 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
+#include <string.h>
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t	i;
-	size_t	n;
-	size_t	z;
+	char	*cast_s;
 
-	n = ft_strlen(src);
-	i = ft_strlen(dst);
-	z = 0;
-	if (i > dstsize)
-		return (n + dstsize);
-	else
+	i = 0;
+	cast_s = (char *) s;
+	while (i < n)
 	{
-		while (z < (dstsize - i) - 1)
-		{
-			dst[i + z] = src[z];
-			z++;
-		}
-		dst[i + z] = '\0';
-		return (i + n);
+		if (cast_s[i] == c)
+			return ((char *)cast_s + i);
+		i++;
 	}
+	return (0);
 }
