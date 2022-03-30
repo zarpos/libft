@@ -6,7 +6,7 @@
 /*   By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 21:53:39 by drubio-m          #+#    #+#             */
-/*   Updated: 2022/03/28 23:08:56 by drubio-m         ###   ########.fr       */
+/*   Updated: 2022/03/30 11:53:00 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-unsigned char	*cast_dst;
-unsigned char	*cast_src;
-	size_t		i;
+	unsigned char	*cast_dst;
+	unsigned char	*cast_src;
+	size_t			i;
 
 	cast_dst = (unsigned char *)s1;
 	cast_src = (unsigned char *)s2;

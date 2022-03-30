@@ -6,11 +6,12 @@
 /*   By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 17:14:36 by drubio-m          #+#    #+#             */
-/*   Updated: 2022/03/30 01:38:42 by drubio-m         ###   ########.fr       */
+/*   Updated: 2022/03/30 13:04:53 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
+#include <stdio.h>
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
@@ -37,13 +38,14 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	else
 		return (0);
 }
+
 /*
 int main(void)
 {
 	char *dst = "MZIdwedewT";
 	char *src = "MZIT";
 	size_t	n = 43320;
-	printf("%s\n", strnstr(dst, src, n));
-	printf("%s", ft_strnstr(dst, src, n));
+//	printf("%s\n", strnstr(dst, src, n));
+	printf("%s", ft_strnstr((void *)0, src, n));
 }
 */

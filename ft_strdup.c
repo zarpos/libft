@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: drubio-m <drubio-m@student.42madrid>       +#+  +:+       +#+        */
+/*   By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 13:22:21 by drubio-m          #+#    #+#             */
-/*   Updated: 2022/03/30 11:51:54 by drubio-m         ###   ########.fr       */
+/*   Created: 2022/03/30 13:18:12 by drubio-m          #+#    #+#             */
+/*   Updated: 2022/03/30 14:30:43 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+#include <string.h>
+#include "libft.h"
+
+char	*ft_strdup(const char *s1)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	else
+	int		i;
+	char	*ptr;
+	char	*print_ptr;
+
+	i = ft_strlen(s1) + 1;
+	ptr = ft_calloc(i, 1);
+	if (!ptr)
 		return (0);
+	print_ptr = ptr;
+	while (*s1 != 0)
+		*(ptr++) = *(s1++);
+	return (print_ptr);
 }
