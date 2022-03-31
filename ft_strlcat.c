@@ -6,7 +6,7 @@
 /*   By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 17:18:22 by drubio-m          #+#    #+#             */
-/*   Updated: 2022/03/28 21:41:50 by drubio-m         ###   ########.fr       */
+/*   Updated: 2022/03/31 21:41:32 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,24 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	n;
 	size_t	z;
 
-	n = ft_strlen(src);
 	i = ft_strlen(dst);
+	n = ft_strlen(src);
 	z = 0;
+	if (dstsize == 0)
+		return (n);
 	if (i > dstsize)
 		return (n + dstsize);
 	else
 	{
-		while (z < (dstsize - i) - 1)
+		while (src[z] && (i + z) < dstsize)
 		{
 			dst[i + z] = src[z];
 			z++;
 		}
-		dst[i + z] = '\0';
+		if ((i + z) == dstsize && i < dstsize)
+			dst[(i + z) - 1] = '\0';
+		else
+			dst[i + z] = '\0';
 		return (i + n);
 	}
 }
