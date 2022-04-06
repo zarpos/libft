@@ -6,12 +6,13 @@
 /*   By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 17:14:36 by drubio-m          #+#    #+#             */
-/*   Updated: 2022/03/31 18:07:05 by drubio-m         ###   ########.fr       */
+/*   Updated: 2022/04/06 12:07:57 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
@@ -22,6 +23,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	j = 0;
 	if (*needle == '\0')
 		return ((char *) haystack);
+	if (len == 0)
+		return (0);
 	while (i <= len && haystack[i])
 	{
 		j = 0;
@@ -42,10 +45,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 /*
 int main(void)
 {
-	char *dst = "MZIdwedewT";
-	char *src = "MZIT";
-	size_t	n = 43320;
-//	printf("%s\n", strnstr(dst, src, n));
-	printf("%s", ft_strnstr((void *)0, src, n));
+	char haystack[30] = "aaabcabcd";
+	char needle[10] = "aabc";
+	size_t	n = 0;
+//	printf("%s\n", strnstr(haystack, needle, n));
+	printf("%s", ft_strnstr(haystack, needle, n));
 }
 */

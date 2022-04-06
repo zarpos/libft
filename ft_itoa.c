@@ -6,7 +6,7 @@
 /*   By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 13:32:40 by drubio-m          #+#    #+#             */
-/*   Updated: 2022/04/05 16:41:56 by drubio-m         ###   ########.fr       */
+/*   Updated: 2022/04/05 21:53:26 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 static int	ft_intlen(int n)
 {
 	int	i;
-	
+
 	i = 1;
+	if (n == -2147483648)
+		return (11);
 	if (n < 0)
 	{
 		i++;
@@ -30,52 +32,42 @@ static int	ft_intlen(int n)
 	return (i);
 }
 
+static int	ft_turn_to_positive(int n)
+{	
+	if (n < 0)
+		n = -n;
+	return (n);
+}
+
 char	*ft_itoa(int n)
 {
-	char	*ret;
-	int		i;
-	
-	i = -1;
-	if (!n)
-		return(0);
-	if (n > 9)
-	{
-		ft_itoa(n / 10);
-		ft_itoa(n % 10);
-	}
+	char		*ret;
+	long int	def_num;
+	int			intlen;
+
+	intlen = ft_intlen(n);
 	ret = ft_calloc(sizeof (char), (ft_intlen(n) + 1));
-	if (n < 0)
-	{	
-		ret[i++] = '-';
-		if (n == -2147483648)
-		{
-		ret[i++] = '2';
-			n = 147483648;
-		}
-		else
-		n = -n;
+	def_num = ft_turn_to_positive(n);
+	if (!ret)
+		return (0);
+	if (n == 0)
+		ret[0] = '0';
+	if (n == (-2147483647 -1))
+		def_num = 2147483648;
+	while (intlen-- > 0)
+	{
+		ret[intlen] = ((def_num % 10) + '0');
+		def_num = def_num / 10;
 	}
-	if (n < 10)
-		ret[i] = (n + '0');
+	if (n < 0)
+		ret[0] = '-';
 	return (ret);
 }
-
-//*****************************************************************************
-// INPUT
-// #1 el entero a convertir
-//*****************************************************************************
-// OUTPUT
-// #1 La string que represente el número.
-// #2 NULL si falla la reserva de memoria.
-//*****************************************************************************
-// DESCRIPTION
-// Utilizando malloc(3), genera una string que 
-// represente el valor entero recibido como argumento. 
-// Los números negativos tienen que gestionarse.
-//*****************************************************************************
-
+/*
 int	main(void)
 {
-	int n = 123;
-	printf("%s", ft_itoa(n));
+	int n = (-2147483647 -1);
+	printf("%s\n", ft_itoa(n));
+	printf("%d", ft_intlen(-2147483647));
 }
+*/

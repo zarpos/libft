@@ -6,7 +6,7 @@
 /*   By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 18:53:19 by drubio-m          #+#    #+#             */
-/*   Updated: 2022/04/01 20:55:32 by drubio-m         ###   ########.fr       */
+/*   Updated: 2022/04/06 12:47:50 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,15 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	if (!s)
-		return (0);
-	ret = ft_calloc(((len) + 1), sizeof (char));
+		return (NULL);
 	i = 0;
-	if (!ret)
-		return (0);
-	if (start >= ft_strlen(s))
+	if (start > ft_strlen(s))
 		return (ft_strdup(""));
+	if (ft_strlen(s) - start < len)
+		len = ft_strlen(s) - start;
+	ret = ft_calloc(((len) + 1), sizeof (char));
+	if (!ret)
+		return (NULL);
 	while (i < len)
 	{
 		ret[i] = s[start + i];
