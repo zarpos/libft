@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 18:53:16 by drubio-m          #+#    #+#             */
-/*   Updated: 2022/04/06 19:35:48 by drubio-m         ###   ########.fr       */
+/*   Created: 2022/04/06 19:36:17 by drubio-m          #+#    #+#             */
+/*   Updated: 2022/04/06 20:16:29 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
-	write(fd, &c, 1);
-}
+	int	i;
 
+	i = 0;
+	if (!s)
+		return ;
+	while (s[i])
+	{
+		write(fd, &s[i], 1);
+		i++;
+	}
+	write(fd, "\n", 1);
+}
 //*****************************************************************************
 // INPUT
-// c: El carácter a enviar.
+// s: La string a enviar.
 // fd: El file descriptor sobre el que escribir.
 //*****************************************************************************
 // OUTPUT
 // Nada
 //*****************************************************************************
 // DESCRIPTION
-// Envía el carácter ’c’ al file descriptor especificado.
+// Envía la string ’s’ al file descriptor dado, seguido de un salto de línea.
 //*****************************************************************************
