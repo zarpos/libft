@@ -6,7 +6,7 @@
 /*   By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 20:11:09 by drubio-m          #+#    #+#             */
-/*   Updated: 2022/04/07 13:02:40 by drubio-m         ###   ########.fr       */
+/*   Updated: 2022/04/09 19:44:31 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,8 +85,10 @@ char	**ft_split(char const *s, char c)
 /*
 int main(void)
 {
-char []s = "hola que tal";
+char s[] = "hola que tal";
 char c = ' ';
-printf("%s", ft_split(s, c));
+printf("%s", *ft_split(s, c));
+system("leaks a.out");
+return (0);
 }
 */

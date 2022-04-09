@@ -6,7 +6,7 @@
 #    By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/25 20:18:27 by drubio-m          #+#    #+#              #
-#    Updated: 2022/04/07 19:10:48 by drubio-m         ###   ########.fr        #
+#    Updated: 2022/04/09 18:42:54 by drubio-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,9 @@ SRC = ft_bzero.c ft_isalpha.c ft_isdigit.c ft_memcpy.c ft_memset.c \
 	  ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c \
 	  ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
 	  ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c 
-BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c
+BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+		ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
+		ft_lstmap.c
 OBJS = $(SRC:.c=.o)
 BONUS_OBJS = $(BONUS:.c=.o)
 C = gcc -c
@@ -33,8 +35,8 @@ bonus: $(OBJ) $(BONUS_OBJS)
 	$(C) $(FLAGS) $(SRC)
 	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(BONUS_OBJS)
 fclean: clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) $(BONUS_OBJS) $(OBJS)
 re: fclean all
 .PHONY: all fclean clean re 
