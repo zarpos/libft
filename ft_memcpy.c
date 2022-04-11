@@ -6,12 +6,11 @@
 /*   By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 17:37:22 by drubio-m          #+#    #+#             */
-/*   Updated: 2022/03/26 19:58:15 by drubio-m         ###   ########.fr       */
+/*   Updated: 2022/04/10 20:03:56 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {

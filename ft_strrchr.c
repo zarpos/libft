@@ -6,9 +6,11 @@
 /*   By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 16:06:56 by drubio-m          #+#    #+#             */
-/*   Updated: 2022/04/06 21:09:29 by drubio-m         ###   ########.fr       */
+/*   Updated: 2022/04/10 20:06:20 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {

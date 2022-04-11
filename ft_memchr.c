@@ -6,12 +6,11 @@
 /*   By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 20:12:19 by drubio-m          #+#    #+#             */
-/*   Updated: 2022/04/06 11:57:12 by drubio-m         ###   ########.fr       */
+/*   Updated: 2022/04/10 20:03:32 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

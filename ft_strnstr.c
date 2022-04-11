@@ -6,12 +6,10 @@
 /*   By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 17:14:36 by drubio-m          #+#    #+#             */
-/*   Updated: 2022/04/06 12:07:57 by drubio-m         ###   ########.fr       */
+/*   Updated: 2022/04/10 20:06:06 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
 #include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)

@@ -6,13 +6,11 @@
 /*   By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 18:53:19 by drubio-m          #+#    #+#             */
-/*   Updated: 2022/04/06 12:47:50 by drubio-m         ###   ########.fr       */
+/*   Updated: 2022/04/10 23:13:20 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -50,20 +48,16 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 // la string ’s’.La nueva string empieza en el índice ’start’ y tiene una 
 // longitud máxima ’len’.
 //****************************************************************
-
 /*
 int main(void)
 {
 char *str = "i just want this part #############";
 	size_t size = 10;
-	char *ret = ft_substr(str, 0, size);
+	char *res;
 
-	if (!strncmp(ret, str, size))
-	{
-		free(ret);
-		return(1);
-	}
-	free(ret);
-	return(2);
+	res = ft_substr(str, 0 , size);
+	printf("%s", res);
+	system("leaks a.out");
+	return (0);
 }
 */

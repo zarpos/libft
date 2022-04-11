@@ -6,11 +6,10 @@
 /*   By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 13:18:12 by drubio-m          #+#    #+#             */
-/*   Updated: 2022/03/30 14:30:43 by drubio-m         ###   ########.fr       */
+/*   Updated: 2022/04/10 20:04:47 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
 char	*ft_strdup(const char *s1)

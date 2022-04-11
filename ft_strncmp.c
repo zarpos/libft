@@ -6,12 +6,11 @@
 /*   By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 16:26:36 by drubio-m          #+#    #+#             */
-/*   Updated: 2022/03/31 18:32:57 by drubio-m         ###   ########.fr       */
+/*   Updated: 2022/04/10 20:06:01 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

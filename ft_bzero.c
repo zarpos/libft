@@ -6,11 +6,11 @@
 /*   By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 12:56:43 by drubio-m          #+#    #+#             */
-/*   Updated: 2022/04/01 17:36:20 by drubio-m         ###   ########.fr       */
+/*   Updated: 2022/04/10 20:02:10 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

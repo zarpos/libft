@@ -6,11 +6,10 @@
 /*   By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 17:18:22 by drubio-m          #+#    #+#             */
-/*   Updated: 2022/04/01 18:33:17 by drubio-m         ###   ########.fr       */
+/*   Updated: 2022/04/10 20:05:09 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)

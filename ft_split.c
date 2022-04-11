@@ -6,7 +6,7 @@
 /*   By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 20:11:09 by drubio-m          #+#    #+#             */
-/*   Updated: 2022/04/09 19:44:31 by drubio-m         ###   ########.fr       */
+/*   Updated: 2022/04/10 23:20:56 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,12 +82,18 @@ char	**ft_split(char const *s, char c)
 // Reserva con malloc(3) y devuelve un array de strings obtenido al separar 
 // ’s’ con el caracter ’c’ como delimitador. El array debe terminar en NULL.
 //*****************************************************************************
+
 /*
 int main(void)
 {
 char s[] = "hola que tal";
 char c = ' ';
-printf("%s", *ft_split(s, c));
+char **res;
+res = ft_split(s, c);
+while (*res)
+{
+	printf("%s", *res++);
+}
 system("leaks a.out");
 return (0);
 }
