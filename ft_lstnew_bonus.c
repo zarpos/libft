@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/22 12:56:43 by drubio-m          #+#    #+#             */
-/*   Updated: 2022/11/28 16:30:21 by drubio-m         ###   ########.fr       */
+/*   Created: 2022/04/08 14:14:06 by drubio-m          #+#    #+#             */
+/*   Updated: 2022/04/10 20:03:17 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+t_list	*ft_lstnew(void *content)
 {
-	size_t	i;
+	t_list	*ret;
 
-	i = 0;
-	while (i < n)
-	{
-		((char *) s)[i] = '\0';
-		i++;
-	}
+	ret = malloc(sizeof (t_list) * 1);
+	if (!ret)
+		return (NULL);
+	ret->content = content;
+	ret->next = NULL;
+	return (ret);
 }
